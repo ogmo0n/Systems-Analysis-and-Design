@@ -1,0 +1,139 @@
+html{
+	min-width: 860px;
+}
+body{
+	background-color: grey;
+	color: white;
+}
+#topPort{
+	margin-left: 20px;
+	font-family: Lucida Handwriting;
+	padding: 5px;
+	font-size: 40pt;
+	font-style: italic;
+	text-shadow: 0px 0px 60px red;
+	border-style:dashed none dashed none;
+	border-radius: 10px;
+	/*box-shadow: 0px 0px 10px white;*/
+}
+input[type=button]{
+	background-color: white;
+	border-color: rgba(100,0,0,0.6);
+	color:red;
+	text-shadow: 0px 0px 1px grey;
+	border-radius: 10px;
+	margin-left: 40px;
+}
+input[type=button]:hover{
+	cursor: pointer;
+	font-style: italic;
+}
+div{
+	padding: 5px;
+	padding-bottom: 7px;
+	border-bottom: 1px solid rgba(200, 0, 0, 0.5);
+	width: 200px;
+	font-size: 10pt;
+}
+span{
+	font-style: italic;
+}
+#genderOptions{
+	margin-top: -10px;
+}
+#priceOptions{
+	border: none;
+}
+#searchOptions{
+	position: sticky;
+	top: 10px;
+	border-bottom: none;
+	border-right: 1px solid rgba(100, 0, 0, 0.5);
+	border-radius: 10px;
+	padding-right: 12px;
+	box-shadow: -3px 0px 5px red inset;
+	padding-top: -10px;
+	margin-top: 10px;
+}
+h3{
+	padding-bottom: 3px;
+	font-size: 15pt;
+	border-bottom: 1px solid rgba(100, 0, 0, 0.5);
+	text-align: center;
+	text-decoration: none;
+	padding-bottom: 5px;
+}
+form{
+	float: left;
+}
+
+#productName{
+	margin-left: -80px;
+	float: left;
+	font-size: 20pt;
+	font-family: monospace;
+}
+#sampleDesc{
+	font-size: 10pt;
+	font-family: monospace;
+	font-style: normal;
+	margin-left: -30px;
+}
+#sampleImage{
+	width:  450px;
+	height: 450px;
+	display: inline-block;
+	margin-top: 0px;
+	border: 1px solid white;
+	margin-left: -60px;
+}
+#sampleImage2{
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 5px;
+	width:  100px;
+	height: 100px;
+	display: inline-block;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	border: 1px solid white;	
+}
+
+p.relatedItems {
+	width: 600px;
+	overflow: auto;
+	white-space: nowrap;
+	border-left: 1px solid firebrick;
+	padding-right: 5px;
+	margin-right: 5px;
+	display: inline-block;
+	margin-left: 260px;
+}
+p.reviews{
+	display: inlie-block;
+	margin-left: 260px;
+}
+
+div.memberBenefits{
+	margin-left: 230px;
+	margin-top: -740px;
+	min-width: 500px;
+ }
+div.memberSignup{
+	margin-left: 230px;
+	border-bottom: none;
+}
+div.part1{
+	border-bottom: none;
+	
+}
+div.part2{
+	margin-left: 300px;
+	margin-top: -267px;
+	border-bottom: none;
+}
+#registerButton{
+	text-align: center;
+	margin-left: 100px;
+	font-size: 12pt;
+}

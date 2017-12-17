@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+ <html>
+  <head>
+   <link rel="stylesheet" type="text/css" href="searchPage.css"/>
+   <title>Search Page</title>
+  </head>
+  <body>
+   <span id="topPort">~ Boutique Group Website ~</span><hr/>
+   <input style="margin-left: 100px;" type="button" value="Home Page"/>
+   <input type="button" value="Customer Survey"/>
+   <input type="button" value="Become a Member"/>
+   <input type="button" value="Contact Us"/>
+   <input type="button" value="View Cart"/>
+   <hr/>
+   
+   <form action="searchPage.php" method="post" name="search">
+    <input style="width: 260px;" type="text" placeholder="Enter Item to Search for Here"/>
+	<input style= "margin: 0px;" type="button" value="Go!"/>
+    <div id="searchOptions">
+	 <h3>Advanced Search Options</h3>
+     <div name="gender">
+      <span style="font-size: 13pt;">Search by Gender</span></br>
+      <input type="checkbox" name="gender[]" value="Male"/>Men
+      <input type="checkbox" name="gender[]" value="Female"/>Women
+      <!-- <input type="checkbox"/>Unisex -->
+     </div>
+     <div name="brand">
+      <span style="font-size: 13pt;">Search by Brands</span><br/>
+      <input type="checkbox" name="brand[]" value="Nike" />Nike
+      <input type="checkbox" name="brand[]" value="Northface" />Northface
+      <input type="checkbox" name="brand[]" value="Gap" />Gap<br/>
+      <input type="checkbox" name="brand[]" value="American Eagle" />American Eagle
+      <input type="checkbox" name="brand[]" value="L.L. Bean" />L.L. Bean<br/>
+      <input type="checkbox" name="brand[]" value="Abercrombie & Fitch" />Abercrombie & Fitch
+<!--       <input type="checkbox"/>etc. -->     
+	</div>
+     <div name="clothing_type">
+      <span style="font-size: 13pt;">Search by Clothing</span><br/>
+      <input type="checkbox" name="clothing_type[]" value="Shirt" />Shirts
+      <input type="checkbox" name="clothing_type[]" value="Pants" />Pants
+      <input type="checkbox" name="clothing_type[]" value="Jacket" />Jackets<br/>
+      <input type="checkbox" name="clothing_type[]" value="Sportswear" />Sportswear
+      <input type="checkbox" name="clothing_type[]" value="Shoes" />Shoes
+      <input type="checkbox" name="clothing_type[]" value="Socks" />Socks
+     </div>
+
+     <div name="season">
+      <span style="font-size: 13pt;">Search by Season</span><br/>
+      <input type="checkbox" name="season[]" value="Spring" />Spring
+      <input type="checkbox" name="season[]" value="Summer" />Summer<br/>
+      <input type="checkbox" name="season[]" value="Fall" />Fall
+      <input type="checkbox" name="season[]" value="Winter" />Winter
+     </div>
+
+     <div name="color">
+     <!-- Color options are now included in the database -->
+     <!-- Added 'Yellow' and moved line breaks -->
+      <span style="font-size: 13pt;">Search by Color</span><br/>
+      <input type="checkbox" name="color[]" value="Red"/>Red
+      <input type="checkbox" name="color[]" value="Orange"/>Orange
+      <input type="checkbox" name="color[]" value="Yellow"/>Yellow<br/>
+      <input type="checkbox" name="color[]" value="Green"/>Green
+      <input type="checkbox" name="color[]" value="Blue"/>Blue
+      <input type="checkbox" name="color[]" value="Indigo"/>Indigo<br/>
+      <input type="checkbox" name="color[]" value="Violet"/>Violet
+      <input type="checkbox" name="color[]" value="Black"/>Black
+      <input type="checkbox" name="color[]" value="White"/>White	
+     </div>
+
+     <div name="size">
+      <span style="font-size: 13pt;">Search by Size</span><br/>
+      <input type="checkbox" name="size[]" value="XL" />XL
+      <input type="checkbox" name="size[]" value="L" />L
+      <input type="checkbox" name="size[]" value="M" />M
+      <input type="checkbox" name="size[]" value="S" />S
+      <input type="checkbox" name="size[]" value="XS" />XS
+     </div>
+
+     <div id="price">
+     <!-- Figure out how to search by price -->
+      <span style="font-size: 13pt;">Search by Price Range and Sales</span><br/>
+      From $ <select style="width: 60px;" name="price1">
+        <option selected value="Price">Price</option>
+        <option value="6.99">6.99</option>
+        <option value="19.99">19.99</option>
+        <option value="20.99">20.99</option>
+        <option value="25.99">25.99</option>
+        <option value="49.99">49.99</option>
+        <option value="50.99">50.99</option>
+      </select>
+      To $ <select style="width: 60px;" name="price2">
+        <!-- <option selected value="Price">Price</option>
+        <option value="6.99">6.99</option>
+        <option value="19.99">19.99</option>
+        <option value="20.99">20.99</option>
+        <option value="25.99">25.99</option>
+        <option value="49.99">49.99</option>
+        <option value="50.99">50.99</option> -->
+      </select><br/>
+      Sort From <select style="width: 100px;" name="price3">
+        <option selected value=""></option>
+        <option value="low">Low to High</option>
+        <option value="high">High to Low</option>
+      </select></br>
+
+      <script type="text/javascript">
+        const select1 = document.getElementsByName("price1")[0];
+        const select2 = document.getElementsByName("price2")[0];
+
+        window.addEventListener("load",function(){
+          const option = document.createElement("option");
+          option.value = "Price";
+          option.text = "Price";
+          select2.add(option);
+        },false);
+
+        function newOptions() {
+          let array = ["Price", 6.99, 19.99, 20.99, 25.99, 49.99, 50.99];
+          let v1 = select1[select1.selectedIndex].value;
+          // console.log(v1);
+          // compare selected index. Loop to create options and append.
+          if (v1 == "Price") {
+            array.splice(1, 6);
+          }
+          if (v1 == 6.99) {
+            let array = ["Price", 6.99, 19.99, 20.99, 25.99, 49.99, 50.99];
+          }
+          if (v1 == 19.99) {
+            array.splice(1, 1);
+            // console.log(array);
+          }
+          if (v1 == 20.99) {
+            array.splice(1, 2);
+            // console.log(array);
+          }
+          if (v1 == 25.99) {
+            array.splice(1, 3);
+            // console.log(array);
+          }
+          if (v1 == 49.99) {
+            array.splice(1, 4);
+            // console.log(array);
+          }
+          if (v1 == 50.99) {
+            array.splice(1, 5);
+            // console.log(array);
+          }
+
+          for (let i = 0; i < array.length; i++) {
+            const option = document.createElement("option");
+            option.value = array[i];
+            option.text = array[i];
+            // console.log(option);
+            select2.add(option); // maybe use appendChild
+          }
+        }
+
+        select1.onchange = function() {
+          // empty select2 of previous choices
+          while (select2.firstChild) {
+            select2.removeChild(select2.firstChild);
+          }
+          // fill it back up
+          newOptions();
+        }
+
+        select2.onload = function() {
+          newOptions();
+        }
+      </script>
+
+     <!-- Sales prices were not included in the current database -->
+      <input type="radio"/>Include Sales Price Within Price Range<br/>
+      <input type="radio"/>Include Original Prices Only (not current sales price)<br/>
+      <i>Or Ignore Price Range and...</i><br/>
+      <input type="radio"/>Only Display Items on Sale
+     </div>
+
+     <!-- Added submit button here and to stylesheet -->
+    <div id="submit">
+    <input type="submit" value="submit" name="submit">
+    </div>
+
+    </div>
+   </form>
+   <p id="content">
+    <p id="productName">Product Name Place Holder</p>
+	<span id="sampleImage"><i style="font-family:monospace; padding: 5px;">Sample Image Place Holder</i></span>
+	<p>
+	 <p id="sampleDesc">
+	  Brief Description & Details of Product in the Above Image
+	  (Availability & Number of Items in Stock, Available Sizes, Available Colors, Price of Item, etc.)
+	 </p>
+	 </p>
+	 <br/><p class="reviews">
+	Reviews<br/><br/>
+	<i>
+	 Reviews of the item will be placed here, as well as an overall average rating of all the user reviews. Users must be a member to be able to write reviews to prevent bots from writing artificial reviews.
+	</i>
+	</p>
+	<br/>
+	 <span style="margin-left: 300px;">You may also be interested in<br/>
+	 <i style="font-size: 10pt; font-family: monospace; margin-left: 300px;">(Related Items)</i>
+	</span>
+	<p class="relatedItems">
+	 <span id="sampleImage2">
+	  <i style="font-family:monospace;">Sample Image <br/> Place Holder</i>
+	 </span>
+	 <span id="sampleImage2">
+	  <i style="font-family:monospace;">Sample Image <br/> Place Holder</i>
+	 </span>
+	 <span id="sampleImage2">
+	  <i style="font-family:monospace;">Sample Image <br/> Place Holder</i>
+	 </span>
+	 <span id="sampleImage2">
+	  <i style="font-family:monospace;">Sample Image <br/> Place Holder</i>
+	 </span>
+	 <span id="sampleImage2">
+	  <i style="font-family:monospace;">Sample Image <br/> Place Holder</i>
+	 </span>
+	 <span id="sampleImage2">
+	  <i style="font-family:monospace;">Sample Image <br/> Place Holder</i>
+	 </span>
+	 <span id="sampleImage2">
+	  <i style="font-family:monospace;">Sample Image <br/> Place Holder</i>
+	 </span>
+	 <span id="sampleImage2">
+	  <i style="font-family:monospace;">Sample Image <br/> Place Holder</i>
+	 </span>
+	 <span id="sampleImage2">
+	  <i style="font-family:monospace;">Sample Image <br/> Place Holder</i>
+	 </span>
+	</p>
+   </p>   
+  </body>
+ </html>
